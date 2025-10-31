@@ -84,7 +84,7 @@ Upload `index.html` to any static hosting service:
 **Option 2: Local Development**
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/meta-tag-generator.git
+git clone https://github.com/mustafapiplodi/meta-tag-generator.git
 
 # Navigate to directory
 cd meta-tag-generator
@@ -228,4 +228,4 @@ Need help?
 
 **Built with ❤️ for better SEO and social sharing**
 
-[Live Demo](https://yourusername.github.io/meta-tag-generator) | [Report Bug](https://github.com/yourusername/meta-tag-generator/issues) | [Request Feature](https://github.com/yourusername/meta-tag-generator/issues)
+[Live Demo](https://mustafapiplodi.github.io/meta-tag-generator) | [Report Bug](https://github.com/mustafapiplodi/meta-tag-generator/issues) | [Request Feature](https://github.com/mustafapiplodi/meta-tag-generator/issues)
