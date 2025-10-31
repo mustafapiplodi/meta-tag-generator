@@ -1,0 +1,3379 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Free Meta Tag Generator 2025 | SEO, Open Graph & Twitter Cards</title>
+  <meta name="title" content="Free Meta Tag Generator | SEO Tool with Live Preview">
+  <meta name="description" content="Generate SEO-optimized meta tags instantly. Create Open Graph tags for Facebook, Twitter Cards, and meta descriptions with live preview. Free meta tag generator tool for better search rankings.">
+  <meta name="keywords" content="meta tag generator, open graph generator, twitter card generator, seo meta tags, og tag generator, meta description generator, free seo tool, social media meta tags">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.scalinghigh.com/meta-tag-generator">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.scalinghigh.com/meta-tag-generator">
+  <meta property="og:title" content="Free Meta Tag Generator 2025 - SEO Tool">
+  <meta property="og:description" content="Generate SEO-optimized meta tags with live preview for Google, Facebook, and Twitter. Free tool with 2025 best practices built-in.">
+  <meta property="og:site_name" content="Scaling High Technologies">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Meta Tag Generator 2025 - SEO Tool">
+  <meta name="twitter:description" content="Generate SEO-optimized meta tags with live preview. Free tool with 2025 best practices.">
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+      --primary: 221.2 83.2% 53.3%;
+      --primary-foreground: 210 40% 98%;
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 221.2 83.2% 53.3%;
+      --radius: 0.5rem;
+      --success: 142 76% 36%;
+      --warning: 38 92% 50%;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+      --primary: 217.2 91.2% 59.8%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 224.3 76.3% 48%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      background: hsl(var(--background));
+      color: hsl(var(--foreground));
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid hsl(var(--border));
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      background: hsl(var(--background) / 0.8);
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+      position: relative;
+    }
+
+    header.scrolled {
+      box-shadow: 0 4px 6px -1px hsl(var(--foreground) / 0.1), 0 2px 4px -1px hsl(var(--foreground) / 0.06);
+      background: hsl(var(--background) / 0.95);
+    }
+
+    .scroll-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(to right, hsl(var(--primary)), hsl(221.2 83.2% 63.3%));
+      width: 0%;
+      transition: width 0.1s ease;
+      z-index: 51;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: hsl(var(--foreground));
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.02);
+    }
+
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+      padding: 4px;
+      background: hsl(var(--primary) / 0.1);
+      border-radius: calc(var(--radius) - 2px);
+      color: hsl(var(--primary));
+    }
+
+    .save-indicator {
+      display: none; /* Removed auto-save feature */
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-right: auto;
+      margin-left: 2rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: hsl(var(--foreground));
+      font-size: 0.9375rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+    }
+
+    .nav-link:hover {
+      color: hsl(var(--primary));
+    }
+
+    @media (max-width: 768px) {
+      .header-nav {
+        display: none;
+      }
+    }
+
+    .theme-toggle {
+      background: hsl(var(--secondary));
+      border: 1px solid hsl(var(--border));
+      padding: 0.625rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: hsl(var(--foreground));
+      font-family: inherit;
+    }
+
+    .theme-toggle:hover {
+      background: hsl(var(--accent));
+      border-color: hsl(var(--primary) / 0.3);
+    }
+
+    .theme-toggle-label {
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .theme-toggle-label {
+        display: inline;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0;
+      text-align: center;
+      border-bottom: 1px solid hsl(var(--border));
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary) / 0.15), transparent),
+        linear-gradient(to bottom, hsl(var(--background)), hsl(var(--background)));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px),
+        linear-gradient(hsl(var(--border)) 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 0.875rem;
+      background: hsl(var(--primary) / 0.1);
+      border: 1px solid hsl(var(--primary) / 0.2);
+      border-radius: 9999px;
+      color: hsl(var(--primary));
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 0.6s ease-out;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: hsl(var(--success));
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, hsl(var(--primary)), hsl(221.2 83.2% 63.3%));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      animation: fadeInUp 0.6s ease-out 0.2s both;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: hsl(var(--muted-foreground));
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+      animation: fadeInUp 0.6s ease-out 0.4s both;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
+      animation: fadeInUp 0.6s ease-out 0.6s both;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px hsl(var(--primary) / 0.4);
+    }
+
+    .hero-cta:active {
+      transform: translateY(0);
+    }
+
+    .hero-features {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.6s ease-out 0.8s both;
+    }
+
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: hsl(var(--muted-foreground));
+      font-size: 0.875rem;
+    }
+
+    .hero-feature svg {
+      color: hsl(var(--success));
+      flex-shrink: 0;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: hsl(var(--muted-foreground));
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: hsl(var(--muted-foreground));
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+      color: hsl(var(--primary));
+    }
+
+    .breadcrumb-separator {
+      color: hsl(var(--muted-foreground));
+      opacity: 0.5;
+    }
+
+    .breadcrumb-current {
+      color: hsl(var(--foreground));
+      font-weight: 500;
+    }
+
+    /* Main Content */
+    main {
+      padding: 3rem 0;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-description {
+      color: hsl(var(--muted-foreground));
+      font-size: 0.95rem;
+    }
+
+    /* Progress Checklist */
+    .progress-checklist {
+      background: hsl(var(--primary) / 0.05);
+      border: 1px solid hsl(var(--primary) / 0.2);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-title {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: hsl(var(--foreground));
+    }
+
+    .progress-count {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: hsl(var(--primary));
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background: hsl(var(--muted));
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--success)));
+      border-radius: 9999px;
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    .progress-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .progress-item {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.8125rem;
+      color: hsl(var(--muted-foreground));
+      padding: 0.25rem 0.625rem;
+      background: hsl(var(--card));
+      border-radius: 9999px;
+      border: 1px solid hsl(var(--border));
+      transition: all 0.2s;
+    }
+
+    .progress-item.completed {
+      color: hsl(var(--success));
+      border-color: hsl(var(--success) / 0.3);
+      background: hsl(var(--success) / 0.1);
+    }
+
+    .progress-item svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Card with Glassmorphism */
+    .card {
+      background: hsl(var(--card) / 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid hsl(var(--border) / 0.5);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      animation: cardEnter 0.5s ease;
+    }
+
+    @keyframes cardEnter {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    .dark .card {
+      background: hsl(var(--card) / 0.5);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .dark .card:hover {
+      box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .label-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: hsl(var(--foreground));
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .field-badge {
+      font-size: 0.6875rem;
+      padding: 0.125rem 0.375rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .field-required {
+      background: hsl(var(--destructive) / 0.1);
+      color: hsl(var(--destructive));
+      border: 1px solid hsl(var(--destructive) / 0.3);
+    }
+
+    .field-optional {
+      background: hsl(var(--muted));
+      color: hsl(var(--muted-foreground));
+      border: 1px solid hsl(var(--border));
+    }
+
+    .label-icon {
+      width: 16px;
+      height: 16px;
+      color: hsl(var(--primary));
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 0.75rem;
+      width: 18px;
+      height: 18px;
+      color: hsl(var(--muted-foreground));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .input-with-icon {
+      padding-left: 2.5rem;
+    }
+
+    .validation-icon {
+      position: absolute;
+      right: 0.75rem;
+      width: 18px;
+      height: 18px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .validation-icon.valid {
+      color: hsl(var(--success));
+      opacity: 1;
+    }
+
+    .validation-icon.invalid {
+      color: hsl(var(--destructive));
+      opacity: 1;
+    }
+
+    .info-icon {
+      cursor: help;
+      color: hsl(var(--muted-foreground));
+      position: relative;
+    }
+
+    .character-count {
+      font-size: 0.75rem;
+      color: hsl(var(--muted-foreground));
+      font-weight: 500;
+      padding: 0.125rem 0.5rem;
+      background: hsl(var(--muted));
+      border-radius: 9999px;
+    }
+
+    .character-count.warning {
+      color: hsl(var(--warning));
+      background: hsl(38 92% 95%);
+    }
+
+    .dark .character-count.warning {
+      background: hsl(38 92% 20%);
+    }
+
+    .character-count.error {
+      color: hsl(var(--destructive));
+      background: hsl(0 84.2% 95%);
+    }
+
+    .dark .character-count.error {
+      background: hsl(0 84.2% 20%);
+    }
+
+    input[type="text"],
+    input[type="url"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.625rem 0.75rem;
+      border: 1px solid hsl(var(--input));
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      font-family: inherit;
+      background: hsl(var(--background));
+      color: hsl(var(--foreground));
+      transition: all 0.2s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: hsl(var(--ring));
+      box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
+      transform: scale(1.01);
+    }
+
+    input:hover,
+    textarea:hover,
+    select:hover {
+      border-color: hsl(var(--ring) / 0.5);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .help-text {
+      color: hsl(var(--muted-foreground));
+      font-size: 0.8125rem;
+      margin-top: 0.375rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.375rem;
+    }
+
+    .help-text svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Grid Layout */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Preview Cards */
+    .preview-card {
+      background: hsl(var(--card));
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .preview-label {
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      color: hsl(var(--foreground));
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .preview-label svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Preview Tabs */
+    .preview-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid hsl(var(--border));
+      flex-wrap: wrap;
+    }
+
+    .preview-tab {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: hsl(var(--muted-foreground));
+      transition: all 0.2s;
+      font-family: inherit;
+      position: relative;
+    }
+
+    .preview-tab:hover {
+      color: hsl(var(--foreground));
+      background: hsl(var(--accent) / 0.5);
+      transform: translateY(-2px);
+    }
+
+    .preview-tab.active {
+      color: hsl(var(--primary));
+      border-bottom-color: hsl(var(--primary));
+      font-weight: 600;
+      background: hsl(var(--primary) / 0.05);
+    }
+
+    .preview-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: hsl(var(--primary));
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    .preview-tab svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .preview-tab-content {
+      display: none;
+    }
+
+    .preview-tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    /* Device Toggle */
+    .device-toggle {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      justify-content: center;
+    }
+
+    .device-btn {
+      padding: 0.5rem 1rem;
+      background: hsl(var(--secondary));
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      transition: all 0.2s;
+      color: hsl(var(--foreground));
+      font-family: inherit;
+    }
+
+    .device-btn.active {
+      background: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+      border-color: hsl(var(--primary));
+    }
+
+    .device-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .preview-container.mobile .serp-preview,
+    .preview-container.mobile .social-preview {
+      max-width: 375px;
+      margin: 0 auto;
+      transform: scale(0.9);
+      transform-origin: top center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Loading animations */
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .preview-loading {
+      position: relative;
+      overflow: hidden;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .skeleton {
+      background: linear-gradient(
+        90deg,
+        hsl(var(--muted)) 0%,
+        hsl(var(--muted) / 0.8) 50%,
+        hsl(var(--muted)) 100%
+      );
+      background-size: 1000px 100%;
+      animation: shimmer 2s infinite linear;
+      border-radius: 4px;
+    }
+
+    .skeleton-text {
+      height: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .skeleton-text.short {
+      width: 60%;
+    }
+
+    .skeleton-text.long {
+      width: 90%;
+    }
+
+    .skeleton-image {
+      width: 100%;
+      height: 250px;
+      margin-bottom: 0.5rem;
+    }
+
+    .loading-spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid hsl(var(--primary) / 0.3);
+      border-top-color: hsl(var(--primary));
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Google SERP Preview with Glassmorphism */
+    .serp-preview {
+      background: hsl(var(--background) / 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 1.25rem;
+      border-radius: var(--radius);
+      border: 1px solid hsl(var(--border) / 0.5);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .serp-title {
+      color: #1a0dab;
+      font-size: 1.25rem;
+      line-height: 1.3;
+      cursor: pointer;
+      margin-bottom: 0.25rem;
+      font-family: arial, sans-serif;
+    }
+
+    .dark .serp-title {
+      color: #8ab4f8;
+    }
+
+    .serp-title:hover {
+      text-decoration: underline;
+    }
+
+    .serp-url {
+      color: #006621;
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+      font-family: arial, sans-serif;
+    }
+
+    .dark .serp-url {
+      color: #93c47d;
+    }
+
+    .serp-description {
+      color: #4d5156;
+      font-size: 0.875rem;
+      line-height: 1.58;
+      font-family: arial, sans-serif;
+    }
+
+    .dark .serp-description {
+      color: #bdc1c6;
+    }
+
+    /* Social Media Preview with Glassmorphism */
+    .social-preview {
+      background: hsl(var(--background) / 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid hsl(var(--border) / 0.5);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .social-image {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.875rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .social-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .social-content {
+      padding: 1rem;
+      background: hsl(var(--card));
+    }
+
+    .social-url {
+      color: hsl(var(--muted-foreground));
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      font-weight: 400;
+    }
+
+    .social-title {
+      color: hsl(var(--foreground));
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 0.25rem;
+    }
+
+    .social-description {
+      color: hsl(var(--muted-foreground));
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+
+    /* Code Output */
+    .code-wrapper {
+      position: relative;
+    }
+
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: hsl(222.2 84% 4.9%);
+      border: 1px solid hsl(var(--border));
+      border-bottom: none;
+      border-radius: var(--radius) var(--radius) 0 0;
+      margin-top: 1rem;
+    }
+
+    .dark .code-header {
+      background: hsl(217.2 32.6% 10%);
+    }
+
+    .code-header-title {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: hsl(210 40% 70%);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .code-header-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .code-action-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 0.75rem;
+      background: hsl(var(--primary) / 0.2);
+      border: 1px solid hsl(var(--primary) / 0.3);
+      border-radius: calc(var(--radius) - 2px);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: hsl(210 40% 90%);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .code-action-btn:hover {
+      background: hsl(var(--primary) / 0.3);
+      border-color: hsl(var(--primary) / 0.4);
+    }
+
+    .code-action-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    pre {
+      background: hsl(222.2 84% 4.9%);
+      color: hsl(210 40% 98%);
+      padding: 1.25rem;
+      border-radius: 0 0 var(--radius) var(--radius);
+      overflow-x: auto;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+      border: 1px solid hsl(var(--border));
+      border-top: none;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      transition: opacity 0.3s ease;
+    }
+
+    .dark pre {
+      background: hsl(217.2 32.6% 10%);
+    }
+
+    pre code {
+      color: inherit;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: hsl(var(--muted) / 0.3);
+      border-radius: var(--radius);
+      border: 2px dashed hsl(var(--border));
+    }
+
+    .empty-state-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1rem;
+      color: hsl(var(--muted-foreground));
+      opacity: 0.5;
+    }
+
+    .empty-state-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: hsl(var(--foreground));
+      margin-bottom: 0.5rem;
+    }
+
+    .empty-state-description {
+      color: hsl(var(--muted-foreground));
+      font-size: 0.9375rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* Syntax Highlighting */
+    .syntax-tag {
+      color: #7dd3fc; /* Light blue for tags */
+    }
+
+    .syntax-attribute {
+      color: #a5b4fc; /* Purple for attributes */
+    }
+
+    .syntax-value {
+      color: #86efac; /* Green for values */
+    }
+
+    .syntax-comment {
+      color: #94a3b8; /* Gray for comments */
+      font-style: italic;
+    }
+
+    /* Line Numbers */
+    .code-with-lines {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+    }
+
+    .line-numbers {
+      text-align: right;
+      color: hsl(210 40% 50%);
+      user-select: none;
+      padding-right: 1rem;
+      border-right: 1px solid hsl(var(--border) / 0.3);
+    }
+
+    .code-content {
+      overflow-x: auto;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn-primary:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px hsl(var(--primary) / 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      background: hsl(var(--secondary));
+      color: hsl(var(--secondary-foreground));
+      border: 1px solid hsl(var(--border));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-secondary:hover {
+      background: hsl(var(--accent));
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-secondary:active {
+      transform: translateY(0);
+    }
+
+    .btn.success {
+      background: hsl(var(--success));
+      color: white;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* Alert / Info Box */
+    .alert {
+      padding: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid;
+      margin-bottom: 1.5rem;
+    }
+
+    .alert-info {
+      background: hsl(221.2 83.2% 95%);
+      border-color: hsl(221.2 83.2% 80%);
+      color: hsl(221.2 83.2% 30%);
+    }
+
+    .dark .alert-info {
+      background: hsl(221.2 83.2% 15%);
+      border-color: hsl(221.2 83.2% 25%);
+      color: hsl(221.2 83.2% 90%);
+    }
+
+    .alert-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Accordion */
+    .accordion {
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid hsl(var(--border));
+    }
+
+    .accordion-item:last-child {
+      border-bottom: none;
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      padding: 1rem;
+      background: hsl(var(--card));
+      border: none;
+      text-align: left;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: hsl(var(--foreground));
+      font-family: inherit;
+      font-size: 0.9375rem;
+      transition: background 0.2s;
+    }
+
+    .accordion-trigger:hover {
+      background: hsl(var(--accent));
+    }
+
+    .accordion-content {
+      padding: 0 1rem 1rem 1rem;
+      color: hsl(var(--muted-foreground));
+      font-size: 0.875rem;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .accordion-content.active {
+      display: block;
+    }
+
+    .accordion-icon {
+      transition: transform 0.2s;
+    }
+
+    .accordion-trigger.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    /* About Section */
+    .about-section {
+      background: hsl(var(--muted));
+      padding: 3rem 0;
+      margin-top: 3rem;
+      border-top: 1px solid hsl(var(--border));
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      background: hsl(var(--card));
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid hsl(var(--border));
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background: hsl(var(--primary) / 0.1);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: hsl(var(--primary));
+    }
+
+    .feature-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-description {
+      color: hsl(var(--muted-foreground));
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid hsl(var(--border));
+      padding: 2rem 0;
+      text-align: center;
+      color: hsl(var(--muted-foreground));
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: hsl(var(--primary));
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Tooltips */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 200px;
+      background-color: hsl(222.2 84% 4.9%);
+      color: #fff;
+      text-align: center;
+      border-radius: var(--radius);
+      padding: 0.5rem;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.75rem;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 0;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero-features {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .hero-cta {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-group {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    /* Icons using SVG */
+    .icon {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Floating Action Button removed */
+    /* Template modal styles removed */
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="main-header">
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="header-content">
+      <a href="#" class="logo">
+        <svg class="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+        </svg>
+        Meta Tag Generator
+      </a>
+      <nav class="header-nav">
+        <button class="nav-link" id="nav-guide">Guide</button>
+        <button class="nav-link" id="nav-about">About</button>
+      </nav>
+      <div class="save-indicator" id="save-indicator">
+        <svg class="save-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+        <span class="save-text">Saved</span>
+      </div>
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <svg class="icon moon-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+          <span class="theme-toggle-label">
+            <span class="light-label">Light</span>
+            <span class="dark-label" style="display:none;">Dark</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="https://www.scalinghigh.com">Home</a>
+          <span class="breadcrumb-separator">›</span>
+          <a href="https://www.scalinghigh.com/tools">Tools</a>
+          <span class="breadcrumb-separator">›</span>
+          <span class="breadcrumb-current">Meta Tag Generator</span>
+        </nav>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Free Forever • No Signup Required
+        </div>
+        <h1>Free Meta Tag Generator</h1>
+        <p>Generate SEO-optimized meta tags for better search rankings and social sharing. Create Open Graph tags, Twitter Cards, and meta descriptions with live preview.</p>
+        <button class="hero-cta" id="scroll-to-form">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          Start Generating Tags
+        </button>
+        <div class="hero-features">
+          <div class="hero-feature">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Live Multi-Platform Preview
+          </div>
+          <div class="hero-feature">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Unicode-Aware Character Counting
+          </div>
+          <div class="hero-feature">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            One-Click Copy to Clipboard
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Form Section -->
+      <section class="section" id="content-details-section">
+        <div class="section-header">
+          <h2 class="section-title">Content Details</h2>
+          <p class="section-description">Enter your page information to generate optimized meta tags</p>
+        </div>
+
+        <div class="progress-checklist">
+          <div class="progress-header">
+            <span class="progress-title">Form Progress</span>
+            <span class="progress-count" id="progress-count">0/6 completed</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progress-bar"></div>
+          </div>
+          <div class="progress-items">
+            <div class="progress-item" id="progress-title">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Title
+            </div>
+            <div class="progress-item" id="progress-desc">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Description
+            </div>
+            <div class="progress-item" id="progress-url">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              URL
+            </div>
+            <div class="progress-item" id="progress-site">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Site Name
+            </div>
+            <div class="progress-item" id="progress-image">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Image
+            </div>
+            <div class="progress-item" id="progress-type">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Type
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <form id="meta-form">
+            <div class="form-group">
+              <div class="label-wrapper">
+                <label for="title-input">
+                  <svg class="label-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                  </svg>
+                  Title Tag
+                  <span class="field-badge field-required">Required</span>
+                  <span class="tooltip">
+                    <svg class="icon info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="tooltiptext">Shows in browser tabs and search results. Front-load important keywords.</span>
+                  </span>
+                </label>
+                <span class="character-count" id="title-count">0/60</span>
+              </div>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  id="title-input"
+                  placeholder="Best Coffee Beans 2025 | Premium Organic Coffee | BeanCo"
+                  maxlength="100"
+                />
+                <svg class="validation-icon" id="title-validation" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div class="help-text">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+                Optimal: 50-60 characters. Put your main keyword first for maximum impact.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="label-wrapper">
+                <label for="desc-input">
+                  <svg class="label-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/>
+                  </svg>
+                  Meta Description
+                  <span class="field-badge field-required">Required</span>
+                  <span class="tooltip">
+                    <svg class="icon info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="tooltiptext">Appears in search results below the title. Make it compelling to increase clicks.</span>
+                  </span>
+                </label>
+                <span class="character-count" id="desc-count">0/160</span>
+              </div>
+              <div class="input-wrapper">
+                <textarea
+                  id="desc-input"
+                  placeholder="Discover premium organic coffee beans roasted to perfection. Free shipping on orders over $50. Shop 100+ varieties from around the world."
+                  maxlength="300"
+                  rows="3"
+                ></textarea>
+                <svg class="validation-icon" id="desc-validation" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="top: 0.75rem;">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div class="help-text">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+                Optimal: 140-160 characters. Include benefits, specific details, and a call-to-action.
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <div class="label-wrapper">
+                  <label for="url-input">
+                    Canonical URL
+                    <span class="field-badge field-optional">Optional</span>
+                  </label>
+                </div>
+                <input
+                  type="url"
+                  id="url-input"
+                  placeholder="https://example.com/premium-coffee-beans"
+                />
+                <div class="help-text">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                  </svg>
+                  Full URL including https:// - tells search engines the preferred page version
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="label-wrapper">
+                  <label for="site-name-input">Site/Brand Name</label>
+                </div>
+                <input
+                  type="text"
+                  id="site-name-input"
+                  placeholder="BeanCo"
+                />
+                <div class="help-text">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                  </svg>
+                  Your website or company name - appears in social shares
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <div class="label-wrapper">
+                  <label for="image-input">
+                    Social Share Image
+                    <span class="tooltip">
+                      <svg class="icon info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      <span class="tooltiptext">Recommended: 1200x630px, JPG/PNG, under 300KB</span>
+                    </span>
+                  </label>
+                </div>
+                <input
+                  type="url"
+                  id="image-input"
+                  placeholder="https://example.com/images/coffee-banner.jpg"
+                />
+                <div class="help-text">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  </svg>
+                  Image shown when shared on Facebook, Twitter, LinkedIn (1200x630px recommended)
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="label-wrapper">
+                  <label for="type-select">Content Type</label>
+                </div>
+                <select id="type-select">
+                  <option value="website">Website</option>
+                  <option value="article">Article/Blog Post</option>
+                  <option value="product">Product</option>
+                  <option value="profile">Profile</option>
+                </select>
+                <div class="help-text">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                  </svg>
+                  Helps social platforms display your content appropriately
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary" id="example-btn">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                Fill with Example
+              </button>
+              <button type="button" class="btn btn-secondary" id="share-btn">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                </svg>
+                Share Form
+              </button>
+              <button type="button" class="btn btn-secondary" id="reset-btn">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+                Reset All
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Preview Section -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Live Preview</h2>
+          <p class="section-description">See how your content will appear across different platforms</p>
+        </div>
+
+        <div class="device-toggle">
+          <button class="device-btn active" id="desktop-view">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Desktop
+          </button>
+          <button class="device-btn" id="mobile-view">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+            Mobile
+          </button>
+        </div>
+
+        <div class="card preview-container" id="preview-container">
+          <div class="preview-tabs">
+            <button class="preview-tab active" data-preview="google">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z"/>
+              </svg>
+              Google Search
+            </button>
+            <button class="preview-tab" data-preview="facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              Facebook
+            </button>
+            <button class="preview-tab" data-preview="twitter">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+              Twitter / X
+            </button>
+          </div>
+
+          <div class="preview-tab-content active" id="google-preview">
+            <div id="serp-preview"></div>
+          </div>
+
+          <div class="preview-tab-content" id="facebook-preview">
+            <div id="fb-preview"></div>
+          </div>
+
+          <div class="preview-tab-content" id="twitter-preview-content">
+            <div id="twitter-preview"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Generated Code -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Generated Meta Tags</h2>
+          <p class="section-description">Copy and paste these tags into your HTML &lt;head&gt; section</p>
+        </div>
+
+        <div class="card">
+          <div class="code-wrapper">
+            <div class="code-header">
+              <div class="code-header-title">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+                meta-tags.html
+              </div>
+              <div class="code-header-actions">
+                <button class="code-action-btn" id="copy-seo-btn" title="Copy SEO tags only">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                  </svg>
+                  SEO
+                </button>
+                <button class="code-action-btn" id="copy-og-btn" title="Copy Open Graph tags only">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                  </svg>
+                  OG
+                </button>
+                <button class="code-action-btn" id="copy-twitter-btn" title="Copy Twitter Card tags only">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                  </svg>
+                  Twitter
+                </button>
+                <button class="code-action-btn" id="download-btn">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  Download
+                </button>
+                <button class="code-action-btn" id="copy-code-btn">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  All
+                </button>
+              </div>
+            </div>
+            <div id="code-empty-state" class="empty-state">
+              <svg class="empty-state-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+              </svg>
+              <div class="empty-state-title">No Meta Tags Yet</div>
+              <div class="empty-state-description">Fill in the form fields above to generate your meta tags. Start with the title and description to see your code appear here.</div>
+            </div>
+            <pre id="output-code" style="display: none;"><code></code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEO Tips Accordion -->
+      <section class="section" id="seo-guide-section">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2 class="section-title">SEO Best Practices & Tips</h2>
+            <p class="section-description">Learn how to optimize your meta tags for better search rankings</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-secondary" id="expand-all-btn" style="padding: 0.5rem 1rem; font-size: 0.8125rem;">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+              </svg>
+              Expand All
+            </button>
+            <button class="btn btn-secondary" id="collapse-all-btn" style="padding: 0.5rem 1rem; font-size: 0.8125rem;">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              Collapse All
+            </button>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-trigger active" data-target="tip1">
+              Why are meta tags important for SEO?
+              <svg class="accordion-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="accordion-content active" id="tip1">
+              Meta tags help search engines understand your content and display it attractively in search results. A well-written title and description can significantly increase your click-through rate (CTR), which is a ranking factor. They're your first impression to potential visitors.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" data-target="tip2">
+              What makes a good title tag?
+              <svg class="accordion-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="accordion-content" id="tip2">
+              Keep it under 60 characters, include your primary keyword near the beginning, make it compelling and unique for each page, include your brand name at the end, and accurately describe the page content. Avoid keyword stuffing and clickbait.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" data-target="tip3">
+              How to write effective meta descriptions?
+              <svg class="accordion-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="accordion-content" id="tip3">
+              Write 140-160 characters, include a clear call-to-action, highlight unique benefits, use active voice, match search intent, include relevant keywords naturally, and make it enticing enough to earn clicks. Think of it as ad copy for organic search.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" data-target="tip4">
+              What are Open Graph tags and why do I need them?
+              <svg class="accordion-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="accordion-content" id="tip4">
+              Open Graph (OG) tags control how your content appears when shared on social media platforms like Facebook, LinkedIn, and WhatsApp. Without them, these platforms may show incorrect or unattractive previews, reducing social engagement and traffic. The image is especially crucial - posts with images get 2.3x more engagement.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" data-target="tip5">
+              What's the ideal image size for social sharing?
+              <svg class="accordion-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="accordion-content" id="tip5">
+              Use 1200x630 pixels (1.91:1 aspect ratio) for universal compatibility across Facebook, Twitter, and LinkedIn. This size prevents cropping and ensures your image displays properly. Keep file size under 300KB for fast loading. Use JPG for photos and PNG for graphics with text.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" data-target="tip6">
+              How can I test my meta tags?
+              <svg class="accordion-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="accordion-content" id="tip6">
+              Use official validation tools: Facebook Sharing Debugger (shows how your content appears on Facebook), Twitter Card Validator (previews Twitter cards), and Google Rich Results Test (validates structured data). Always test before launching to catch errors early.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Validation Tools -->
+      <section class="section">
+        <div class="alert alert-info">
+          <div class="alert-title">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Validate Your Meta Tags
+          </div>
+          <p style="margin-top: 0.5rem; margin-bottom: 0.75rem;">After adding meta tags to your website, test them with these official validation tools:</p>
+          <ul style="margin-left: 1.25rem; line-height: 2;">
+            <li><a href="https://developers.facebook.com/tools/debug/" target="_blank" rel="noopener">Facebook Sharing Debugger</a> - Test Open Graph tags and preview Facebook shares</li>
+            <li><a href="https://cards-dev.twitter.com/validator" target="_blank" rel="noopener">Twitter Card Validator</a> - Validate Twitter Cards and see preview</li>
+            <li><a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Google Rich Results Test</a> - Check structured data implementation</li>
+          </ul>
+          <button class="btn btn-primary" id="validate-tags-btn" style="margin-top: 1rem;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Open Validation Tools
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <h2 class="section-title">About This Tool</h2>
+        <p class="section-description">Everything you need to create perfect meta tags for SEO and social media</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Live Preview</h3>
+          <p class="feature-description">See real-time previews of how your content will appear on Google search results, Facebook, Twitter, and LinkedIn as you type.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">SEO Optimized</h3>
+          <p class="feature-description">Follows 2025 best practices with character count guidance, optimal formatting, and validation to ensure your tags perform well in search engines.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Fast & Free</h3>
+          <p class="feature-description">No signup required, no ads, completely free. Generate unlimited meta tags instantly with our lightweight, browser-based tool.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">All Platforms</h3>
+          <p class="feature-description">Generates complete tags for Google SEO, Facebook Open Graph, Twitter Cards, LinkedIn, and more - all from one simple form.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Character Counting</h3>
+          <p class="feature-description">Smart Unicode-aware character counters with warnings when approaching limits. Handles emoji and special characters correctly.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Copy & Paste Ready</h3>
+          <p class="feature-description">One-click copy to clipboard. All tags are properly formatted and escaped, ready to paste directly into your HTML.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; padding: 2rem; background: hsl(var(--card)); border-radius: var(--radius); border: 1px solid hsl(var(--border));">
+        <h3 style="margin-bottom: 1rem; font-size: 1.25rem;">What are Meta Tags?</h3>
+        <p style="color: hsl(var(--muted-foreground)); line-height: 1.7; margin-bottom: 1rem;">
+          Meta tags are HTML elements that provide metadata about your web page. They don't appear on the page itself but in the page's code. Search engines like Google use meta tags to understand your content and display it in search results. Social media platforms use Open Graph and Twitter Card tags to create rich previews when your content is shared.
+        </p>
+        <p style="color: hsl(var(--muted-foreground)); line-height: 1.7; margin-bottom: 1rem;">
+          Properly optimized meta tags can improve your search engine rankings, increase click-through rates from search results, enhance social media engagement, and drive more traffic to your website. This tool generates all the essential meta tags you need, including title tags, meta descriptions, Open Graph tags for Facebook and LinkedIn, Twitter Cards, and canonical URLs.
+        </p>
+        <p style="color: hsl(var(--muted-foreground)); line-height: 1.7;">
+          Our meta tag generator follows 2025 SEO best practices with optimal character limits, proper formatting, and validation. Whether you're a blogger, marketer, developer, or business owner, this free tool helps you create professional meta tags in seconds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 0.5rem;">
+        <strong>Free Meta Tag Generator</strong> - SEO Tool for Open Graph, Twitter Cards & Meta Descriptions
+      </p>
+      <p style="margin-bottom: 1rem; color: hsl(var(--muted-foreground));">
+        Generate optimized meta tags, Open Graph tags, Twitter Cards, and structured data for better search rankings and social sharing.
+      </p>
+      <p>
+        Powered by <a href="https://www.scalinghigh.com" target="_blank" rel="noopener">Scaling High Technologies</a>
+      </p>
+      <p style="margin-top: 0.5rem; font-size: 0.8125rem;">
+        © 2025 Meta Tag Generator. Free SEO tool - No signup required.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating Action Button removed -->
+
+  <script>
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+    const lightLabel = document.querySelector('.light-label');
+    const darkLabel = document.querySelector('.dark-label');
+    const html = document.documentElement;
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+      html.classList.add('dark');
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+      lightLabel.style.display = 'none';
+      darkLabel.style.display = 'inline';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+
+      sunIcon.style.display = isDark ? 'none' : 'block';
+      moonIcon.style.display = isDark ? 'block' : 'none';
+      lightLabel.style.display = isDark ? 'none' : 'inline';
+      darkLabel.style.display = isDark ? 'inline' : 'none';
+
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Header scroll shadow and progress bar
+    const header = document.getElementById('main-header');
+    const scrollProgress = document.getElementById('scroll-progress');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      // Add shadow on scroll
+      if (currentScroll > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      // Update progress bar
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (currentScroll / windowHeight) * 100;
+      scrollProgress.style.width = scrolled + '%';
+
+      lastScroll = currentScroll;
+    });
+
+    // Device toggle functionality
+    const previewContainer = document.getElementById('preview-container');
+    document.getElementById('desktop-view').addEventListener('click', () => {
+      previewContainer.classList.remove('mobile');
+      document.getElementById('desktop-view').classList.add('active');
+      document.getElementById('mobile-view').classList.remove('active');
+    });
+
+    document.getElementById('mobile-view').addEventListener('click', () => {
+      previewContainer.classList.add('mobile');
+      document.getElementById('mobile-view').classList.add('active');
+      document.getElementById('desktop-view').classList.remove('active');
+    });
+
+    // Preview tab functionality
+    document.querySelectorAll('.preview-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const previewType = tab.getAttribute('data-preview');
+
+        // Remove active class from all tabs and contents
+        document.querySelectorAll('.preview-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.preview-tab-content').forEach(c => c.classList.remove('active'));
+
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        // Show corresponding content
+        const contentMap = {
+          'google': 'google-preview',
+          'facebook': 'facebook-preview',
+          'twitter': 'twitter-preview-content'
+        };
+
+        const contentId = contentMap[previewType];
+        if (contentId) {
+          document.getElementById(contentId).classList.add('active');
+        }
+      });
+    });
+
+    // Accordion functionality
+    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const targetId = trigger.getAttribute('data-target');
+        const content = document.getElementById(targetId);
+        const isActive = trigger.classList.contains('active');
+
+        // Close all accordions
+        document.querySelectorAll('.accordion-trigger').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+
+        // Open clicked accordion if it wasn't active
+        if (!isActive) {
+          trigger.classList.add('active');
+          content.classList.add('active');
+        }
+      });
+    });
+
+    // Expand all accordion items
+    document.getElementById('expand-all-btn').addEventListener('click', () => {
+      document.querySelectorAll('.accordion-trigger').forEach(t => t.classList.add('active'));
+      document.querySelectorAll('.accordion-content').forEach(c => c.classList.add('active'));
+    });
+
+    // Collapse all accordion items
+    document.getElementById('collapse-all-btn').addEventListener('click', () => {
+      document.querySelectorAll('.accordion-trigger').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+    });
+
+    // Character Counter Class with Unicode-aware counting
+    class CharacterCounter {
+      constructor(inputElement, displayElement, maxLength) {
+        this.input = inputElement;
+        this.display = displayElement;
+        this.maxLength = maxLength;
+
+        if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+          this.segmenter = new Intl.Segmenter('en', { granularity: 'grapheme' });
+        }
+
+        this.input.addEventListener('input', () => this.update());
+        this.update();
+      }
+
+      count(text) {
+        if (this.segmenter) {
+          return [...this.segmenter.segment(text)].length;
+        } else {
+          return [...text].length;
+        }
+      }
+
+      update() {
+        const text = this.input.value;
+        const count = this.count(text);
+        const remaining = this.maxLength - count;
+
+        this.display.textContent = `${count}/${this.maxLength}`;
+        this.display.classList.remove('warning', 'error');
+
+        if (remaining < 20 && remaining >= 0) {
+          this.display.classList.add('warning');
+        } else if (remaining < 0) {
+          this.display.classList.add('error');
+        }
+
+        return { count, remaining, isValid: remaining >= 0 };
+      }
+    }
+
+    // SERP Preview Class
+    class SERPPreview {
+      constructor(containerElement) {
+        this.container = containerElement;
+        this.segmenter = typeof Intl !== 'undefined' && Intl.Segmenter
+          ? new Intl.Segmenter('en', { granularity: 'grapheme' })
+          : null;
+        this.render();
+      }
+
+      render() {
+        this.container.innerHTML = `
+          <div class="serp-preview">
+            <div class="serp-title" id="serp-title-preview"></div>
+            <div class="serp-url" id="serp-url-preview"></div>
+            <div class="serp-description" id="serp-desc-preview"></div>
+          </div>
+        `;
+      }
+
+      update({ title, url, description }) {
+        const titleEl = document.getElementById('serp-title-preview');
+        const urlEl = document.getElementById('serp-url-preview');
+        const descEl = document.getElementById('serp-desc-preview');
+
+        titleEl.textContent = this.truncate(title || 'Your Page Title Will Appear Here', 60);
+        urlEl.textContent = this.formatURL(url);
+        descEl.textContent = this.truncate(description || 'Your meta description will appear here. Make it compelling to increase click-through rates from search results.', 160);
+      }
+
+      truncate(text, maxLength) {
+        if (!text) return '';
+
+        if (this.segmenter) {
+          const segments = [...this.segmenter.segment(text)];
+          if (segments.length <= maxLength) return text;
+
+          return segments
+            .slice(0, maxLength - 1)
+            .map(s => s.segment)
+            .join('') + '...';
+        } else {
+          const chars = [...text];
+          if (chars.length <= maxLength) return text;
+          return chars.slice(0, maxLength - 1).join('') + '...';
+        }
+      }
+
+      formatURL(url) {
+        try {
+          const urlObj = new URL(url);
+          return `${urlObj.hostname} › ${urlObj.pathname.split('/').filter(Boolean).join(' › ')}`;
+        } catch {
+          return url || 'www.example.com › page';
+        }
+      }
+    }
+
+    // Social Preview Class
+    class SocialPreview {
+      constructor(containerElement, platform = 'facebook') {
+        this.container = containerElement;
+        this.platform = platform;
+        this.limits = {
+          facebook: { title: 60, description: 200 },
+          twitter: { title: 70, description: 200 }
+        };
+        this.segmenter = typeof Intl !== 'undefined' && Intl.Segmenter
+          ? new Intl.Segmenter('en', { granularity: 'grapheme' })
+          : null;
+        this.render();
+      }
+
+      render() {
+        this.container.innerHTML = `
+          <div class="social-preview">
+            <div class="social-image" id="${this.platform}-image">
+              <span>1200 x 630px Image</span>
+            </div>
+            <div class="social-content">
+              <div class="social-url" id="${this.platform}-url">EXAMPLE.COM</div>
+              <div class="social-title" id="${this.platform}-title">Your Page Title</div>
+              <div class="social-description" id="${this.platform}-desc">Your description will appear here when shared</div>
+            </div>
+          </div>
+        `;
+      }
+
+      update({ title, description, image, url, siteName }) {
+        const limits = this.limits[this.platform];
+
+        const titleEl = document.getElementById(`${this.platform}-title`);
+        const descEl = document.getElementById(`${this.platform}-desc`);
+        const imageEl = document.getElementById(`${this.platform}-image`);
+        const urlEl = document.getElementById(`${this.platform}-url`);
+
+        titleEl.textContent = this.truncate(title || 'Your Page Title', limits.title);
+        descEl.textContent = this.truncate(description || 'Your description will appear here when shared', limits.description);
+
+        // Enhanced image preview with loading state
+        if (image && this.isValidImageUrl(image)) {
+          // Show loading state
+          imageEl.innerHTML = '<span style="opacity: 0.7;">Loading image...</span>';
+
+          // Create image element
+          const img = new Image();
+          img.onload = () => {
+            imageEl.innerHTML = '';
+            img.style.cssText = 'width: 100%; height: 100%; object-fit: cover; display: block;';
+            imageEl.appendChild(img);
+          };
+          img.onerror = () => {
+            imageEl.innerHTML = `
+              <div style="text-align: center; padding: 1rem;">
+                <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="opacity: 0.5; margin: 0 auto 0.5rem;">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <div style="font-size: 0.875rem;">Image failed to load</div>
+                <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.25rem;">Check the image URL</div>
+              </div>
+            `;
+          };
+          img.src = image;
+          img.alt = 'Social media preview image';
+        } else {
+          imageEl.innerHTML = '<span>1200 x 630px Image</span>';
+        }
+
+        if (url) {
+          try {
+            const urlObj = new URL(url);
+            urlEl.textContent = urlObj.hostname.toUpperCase();
+          } catch {
+            urlEl.textContent = 'EXAMPLE.COM';
+          }
+        } else {
+          urlEl.textContent = 'EXAMPLE.COM';
+        }
+      }
+
+      isValidImageUrl(url) {
+        try {
+          const urlObj = new URL(url);
+          return urlObj.protocol === 'http:' || urlObj.protocol === 'https:';
+        } catch {
+          return false;
+        }
+      }
+
+      truncate(text, maxLength) {
+        if (!text) return '';
+
+        if (this.segmenter) {
+          const segments = [...this.segmenter.segment(text)];
+          if (segments.length <= maxLength) return text;
+
+          return segments
+            .slice(0, maxLength - 1)
+            .map(s => s.segment)
+            .join('') + '...';
+        } else {
+          const chars = [...text];
+          if (chars.length <= maxLength) return text;
+          return chars.slice(0, maxLength - 1).join('') + '...';
+        }
+      }
+
+      escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+    }
+
+    // Meta Tag Generator Class
+    class MetaTagGenerator {
+      constructor() {
+        this.state = new Proxy({
+          title: '',
+          description: '',
+          url: '',
+          image: '',
+          siteName: '',
+          type: 'website'
+        }, {
+          set: (target, property, value) => {
+            target[property] = value;
+            this.onStateChange();
+            return true;
+          }
+        });
+
+        this.previews = [];
+      }
+
+      onStateChange() {
+        // Clear any existing loading timeout
+        if (this.loadingTimeout) {
+          clearTimeout(this.loadingTimeout);
+        }
+
+        // Add loading state to previews
+        this.showLoadingState();
+
+        // Debounce the actual update
+        this.loadingTimeout = setTimeout(() => {
+          this.hideLoadingState();
+          this.previews.forEach(preview => preview.update(this.state));
+          this.updateCodeOutput();
+        }, 300);
+      }
+
+      showLoadingState() {
+        const previewElements = document.querySelectorAll('.serp-preview, .social-preview');
+        previewElements.forEach(el => {
+          el.classList.add('preview-loading');
+        });
+      }
+
+      hideLoadingState() {
+        const previewElements = document.querySelectorAll('.serp-preview, .social-preview');
+        previewElements.forEach(el => {
+          el.classList.remove('preview-loading');
+        });
+      }
+
+      addPreview(preview) {
+        this.previews.push(preview);
+      }
+
+      bindInput(inputElement, property) {
+        inputElement.addEventListener('input', (e) => {
+          this.state[property] = e.target.value;
+        });
+
+        this.state[property] = inputElement.value;
+      }
+
+      escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      generateTags() {
+        const tags = [];
+
+        if (!this.state.title && !this.state.description) {
+          return '<!-- Enter your content details above to generate meta tags -->';
+        }
+
+        tags.push('<!-- Primary Meta Tags -->');
+
+        if (this.state.title) {
+          tags.push(`<title>${this.escapeHtml(this.state.title)}</title>`);
+        }
+
+        if (this.state.description) {
+          tags.push(`<meta name="description" content="${this.escapeHtml(this.state.description)}">`);
+        }
+
+        if (this.state.url) {
+          tags.push(`<link rel="canonical" href="${this.escapeHtml(this.state.url)}">`);
+        }
+
+        tags.push(`<meta name="viewport" content="width=device-width, initial-scale=1.0">`);
+        tags.push(`<meta name="robots" content="index, follow">`);
+
+        tags.push('');
+        tags.push('<!-- Open Graph / Facebook -->');
+
+        tags.push(`<meta property="og:type" content="${this.state.type}">`);
+
+        if (this.state.title) {
+          tags.push(`<meta property="og:title" content="${this.escapeHtml(this.state.title)}">`);
+        }
+
+        if (this.state.description) {
+          tags.push(`<meta property="og:description" content="${this.escapeHtml(this.state.description)}">`);
+        }
+
+        if (this.state.url) {
+          tags.push(`<meta property="og:url" content="${this.escapeHtml(this.state.url)}">`);
+        }
+
+        if (this.state.image) {
+          tags.push(`<meta property="og:image" content="${this.escapeHtml(this.state.image)}">`);
+          tags.push(`<meta property="og:image:width" content="1200">`);
+          tags.push(`<meta property="og:image:height" content="630">`);
+        }
+
+        if (this.state.siteName) {
+          tags.push(`<meta property="og:site_name" content="${this.escapeHtml(this.state.siteName)}">`);
+        }
+
+        tags.push('');
+        tags.push('<!-- Twitter Card -->');
+
+        tags.push(`<meta name="twitter:card" content="summary_large_image">`);
+
+        if (this.state.title) {
+          tags.push(`<meta name="twitter:title" content="${this.escapeHtml(this.state.title)}">`);
+        }
+
+        if (this.state.description) {
+          tags.push(`<meta name="twitter:description" content="${this.escapeHtml(this.state.description)}">`);
+        }
+
+        if (this.state.image) {
+          tags.push(`<meta name="twitter:image" content="${this.escapeHtml(this.state.image)}">`);
+        }
+
+        return tags.join('\n');
+      }
+
+      updateCodeOutput() {
+        const codeElement = document.getElementById('output-code');
+        const emptyState = document.getElementById('code-empty-state');
+        const generatedCode = this.generateTags();
+
+        // Add subtle loading animation to code element
+        codeElement.style.opacity = '0.5';
+
+        setTimeout(() => {
+          // Show/hide empty state
+          const hasContent = generatedCode && !generatedCode.includes('Enter your content');
+          if (hasContent) {
+            emptyState.style.display = 'none';
+            codeElement.style.display = 'block';
+            // Apply syntax highlighting
+            const highlighted = this.applySyntaxHighlighting(generatedCode);
+            codeElement.querySelector('code').innerHTML = highlighted;
+          } else {
+            emptyState.style.display = 'block';
+            codeElement.style.display = 'none';
+          }
+
+          // Restore opacity
+          codeElement.style.opacity = '1';
+        }, 300);
+      }
+
+      applySyntaxHighlighting(code) {
+        // Simple regex-based syntax highlighting
+        return code
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/(&lt;!--.*?--&gt;)/g, '<span class="syntax-comment">$1</span>')
+          .replace(/(&lt;\/?)([\w-]+)/g, '$1<span class="syntax-tag">$2</span>')
+          .replace(/([\w-]+)=/g, '<span class="syntax-attribute">$1</span>=')
+          .replace(/="([^"]*)"/g, '="<span class="syntax-value">$1</span>"');
+      }
+
+      generateSEOTags() {
+        const tags = [];
+        tags.push('<!-- Primary Meta Tags -->');
+        if (this.state.title) {
+          tags.push(`<title>${this.escapeHtml(this.state.title)}</title>`);
+        }
+        if (this.state.description) {
+          tags.push(`<meta name="description" content="${this.escapeHtml(this.state.description)}">`);
+        }
+        if (this.state.url) {
+          tags.push(`<link rel="canonical" href="${this.escapeHtml(this.state.url)}">`);
+        }
+        tags.push(`<meta name="viewport" content="width=device-width, initial-scale=1.0">`);
+        tags.push(`<meta name="robots" content="index, follow">`);
+        return tags.join('\n');
+      }
+
+      generateOGTags() {
+        const tags = [];
+        tags.push('<!-- Open Graph / Facebook -->');
+        tags.push(`<meta property="og:type" content="${this.state.type}">`);
+        if (this.state.title) {
+          tags.push(`<meta property="og:title" content="${this.escapeHtml(this.state.title)}">`);
+        }
+        if (this.state.description) {
+          tags.push(`<meta property="og:description" content="${this.escapeHtml(this.state.description)}">`);
+        }
+        if (this.state.url) {
+          tags.push(`<meta property="og:url" content="${this.escapeHtml(this.state.url)}">`);
+        }
+        if (this.state.image) {
+          tags.push(`<meta property="og:image" content="${this.escapeHtml(this.state.image)}">`);
+          tags.push(`<meta property="og:image:width" content="1200">`);
+          tags.push(`<meta property="og:image:height" content="630">`);
+        }
+        if (this.state.siteName) {
+          tags.push(`<meta property="og:site_name" content="${this.escapeHtml(this.state.siteName)}">`);
+        }
+        return tags.join('\n');
+      }
+
+      generateTwitterTags() {
+        const tags = [];
+        tags.push('<!-- Twitter Card -->');
+        tags.push(`<meta name="twitter:card" content="summary_large_image">`);
+        if (this.state.title) {
+          tags.push(`<meta name="twitter:title" content="${this.escapeHtml(this.state.title)}">`);
+        }
+        if (this.state.description) {
+          tags.push(`<meta name="twitter:description" content="${this.escapeHtml(this.state.description)}">`);
+        }
+        if (this.state.image) {
+          tags.push(`<meta name="twitter:image" content="${this.escapeHtml(this.state.image)}">`);
+        }
+        return tags.join('\n');
+      }
+
+      reset() {
+        this.state.title = '';
+        this.state.description = '';
+        this.state.url = '';
+        this.state.image = '';
+        this.state.siteName = '';
+        this.state.type = 'website';
+
+        document.getElementById('title-input').value = '';
+        document.getElementById('desc-input').value = '';
+        document.getElementById('url-input').value = '';
+        document.getElementById('image-input').value = '';
+        document.getElementById('site-name-input').value = '';
+        document.getElementById('type-select').value = 'website';
+      }
+    }
+
+    // Clipboard functionality
+    async function copyToClipboard(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return { success: true };
+      } catch (err) {
+        return legacyCopy(text);
+      }
+    }
+
+    function legacyCopy(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+
+      try {
+        textarea.select();
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        return { success: successful };
+      } catch (err) {
+        document.body.removeChild(textarea);
+        return { success: false };
+      }
+    }
+
+    async function copyWithFeedback(text, button) {
+      const originalHTML = button.innerHTML;
+
+      const result = await copyToClipboard(text);
+
+      if (result.success) {
+        // Trigger confetti animation
+        if (typeof confetti !== 'undefined') {
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        }
+
+        button.innerHTML = `
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          Copied!
+        `;
+        button.classList.add('success');
+        setTimeout(() => {
+          button.innerHTML = originalHTML;
+          button.classList.remove('success');
+        }, 2000);
+      } else {
+        alert('Failed to copy. Please try selecting and copying manually.');
+      }
+    }
+
+    // Initialize the application
+    const generator = new MetaTagGenerator();
+
+    const serpPreview = new SERPPreview(document.getElementById('serp-preview'));
+    const fbPreview = new SocialPreview(document.getElementById('fb-preview'), 'facebook');
+    const twitterPreview = new SocialPreview(document.getElementById('twitter-preview'), 'twitter');
+
+    generator.addPreview(serpPreview);
+    generator.addPreview(fbPreview);
+    generator.addPreview(twitterPreview);
+
+    const titleCounter = new CharacterCounter(
+      document.getElementById('title-input'),
+      document.getElementById('title-count'),
+      60
+    );
+
+    const descCounter = new CharacterCounter(
+      document.getElementById('desc-input'),
+      document.getElementById('desc-count'),
+      160
+    );
+
+    // Validation feedback for inputs
+    function updateValidation(inputId, validationId, isValid) {
+      const validationIcon = document.getElementById(validationId);
+      if (isValid) {
+        validationIcon.classList.remove('invalid');
+        validationIcon.classList.add('valid');
+      } else {
+        validationIcon.classList.remove('valid');
+        if (document.getElementById(inputId).value.length > 0) {
+          validationIcon.classList.add('invalid');
+        } else {
+          validationIcon.classList.remove('invalid');
+        }
+      }
+    }
+
+    // Title validation
+    document.getElementById('title-input').addEventListener('input', (e) => {
+      const length = titleCounter.count(e.target.value);
+      const isValid = length >= 30 && length <= 60;
+      updateValidation('title-input', 'title-validation', isValid);
+    });
+
+    // Description validation
+    document.getElementById('desc-input').addEventListener('input', (e) => {
+      const length = descCounter.count(e.target.value);
+      const isValid = length >= 120 && length <= 160;
+      updateValidation('desc-input', 'desc-validation', isValid);
+    });
+
+    // Progress tracking
+    function updateProgress() {
+      const fields = {
+        title: document.getElementById('title-input').value.trim(),
+        desc: document.getElementById('desc-input').value.trim(),
+        url: document.getElementById('url-input').value.trim(),
+        site: document.getElementById('site-name-input').value.trim(),
+        image: document.getElementById('image-input').value.trim(),
+        type: document.getElementById('type-select').value
+      };
+
+      let completed = 0;
+      Object.keys(fields).forEach(key => {
+        const item = document.getElementById('progress-' + key);
+        if (fields[key] && fields[key].length > 0) {
+          item.classList.add('completed');
+          completed++;
+        } else {
+          item.classList.remove('completed');
+        }
+      });
+
+      const total = 6;
+      const percentage = (completed / total) * 100;
+      document.getElementById('progress-bar').style.width = percentage + '%';
+      document.getElementById('progress-count').textContent = `${completed}/${total} completed`;
+    }
+
+    // Add progress tracking to all inputs
+    ['title-input', 'desc-input', 'url-input', 'site-name-input', 'image-input', 'type-select'].forEach(id => {
+      document.getElementById(id).addEventListener('input', updateProgress);
+    });
+
+    generator.bindInput(document.getElementById('title-input'), 'title');
+    generator.bindInput(document.getElementById('desc-input'), 'description');
+    generator.bindInput(document.getElementById('url-input'), 'url');
+    generator.bindInput(document.getElementById('image-input'), 'image');
+    generator.bindInput(document.getElementById('site-name-input'), 'siteName');
+    generator.bindInput(document.getElementById('type-select'), 'type');
+
+    // Copy button in code header (all tags)
+    document.getElementById('copy-code-btn').addEventListener('click', async () => {
+      const tags = generator.generateTags();
+      await copyWithFeedback(tags, document.getElementById('copy-code-btn'));
+    });
+
+    // Copy SEO tags only
+    document.getElementById('copy-seo-btn').addEventListener('click', async () => {
+      const tags = generator.generateSEOTags();
+      await copyWithFeedback(tags, document.getElementById('copy-seo-btn'));
+    });
+
+    // Copy Open Graph tags only
+    document.getElementById('copy-og-btn').addEventListener('click', async () => {
+      const tags = generator.generateOGTags();
+      await copyWithFeedback(tags, document.getElementById('copy-og-btn'));
+    });
+
+    // Copy Twitter tags only
+    document.getElementById('copy-twitter-btn').addEventListener('click', async () => {
+      const tags = generator.generateTwitterTags();
+      await copyWithFeedback(tags, document.getElementById('copy-twitter-btn'));
+    });
+
+    // Download button functionality
+    document.getElementById('download-btn').addEventListener('click', () => {
+      const tags = generator.generateTags();
+      const blob = new Blob([tags], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'meta-tags.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      // Trigger confetti animation
+      if (typeof confetti !== 'undefined') {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      }
+
+      // Visual feedback
+      const btn = document.getElementById('download-btn');
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = `
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+        Downloaded
+      `;
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+      }, 2000);
+    });
+
+    // Share form button
+    document.getElementById('share-btn').addEventListener('click', async () => {
+      const shareURL = generateShareableURL();
+      const result = await copyToClipboard(shareURL);
+
+      if (result.success) {
+        const btn = document.getElementById('share-btn');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = `
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          Link Copied!
+        `;
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 2000);
+      }
+    });
+
+    // Fill with example button
+    document.getElementById('example-btn').addEventListener('click', () => {
+      document.getElementById('title-input').value = 'Best Coffee Beans 2025 | Premium Organic Coffee';
+      document.getElementById('desc-input').value = 'Discover premium organic coffee beans roasted to perfection. Free shipping on orders over $50. Shop 100+ varieties from around the world.';
+      document.getElementById('url-input').value = 'https://example.com/premium-coffee-beans';
+      document.getElementById('site-name-input').value = 'BeanCo';
+      document.getElementById('image-input').value = 'https://example.com/images/coffee-banner.jpg';
+      document.getElementById('type-select').value = 'website';
+
+      // Trigger input events to update everything
+      document.getElementById('title-input').dispatchEvent(new Event('input', { bubbles: true }));
+      document.getElementById('desc-input').dispatchEvent(new Event('input', { bubbles: true }));
+      document.getElementById('url-input').dispatchEvent(new Event('input', { bubbles: true }));
+      document.getElementById('site-name-input').dispatchEvent(new Event('input', { bubbles: true }));
+      document.getElementById('image-input').dispatchEvent(new Event('input', { bubbles: true }));
+      document.getElementById('type-select').dispatchEvent(new Event('input', { bubbles: true }));
+    });
+
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset all fields?')) {
+        generator.reset();
+
+        // Clear validation icons
+        document.querySelectorAll('.validation-icon').forEach(icon => {
+          icon.classList.remove('valid', 'invalid');
+        });
+
+        // Reset character counts
+        document.getElementById('title-count').textContent = '0/60';
+        document.getElementById('desc-count').textContent = '0/160';
+
+        // Reset character count styling
+        document.getElementById('title-count').classList.remove('warning', 'error');
+        document.getElementById('desc-count').classList.remove('warning', 'error');
+
+        // Reset progress bar
+        document.getElementById('progress-bar').style.width = '0%';
+        document.getElementById('progress-count').textContent = '0/6 completed';
+
+        // Reset progress items
+        document.querySelectorAll('.progress-item').forEach(item => {
+          item.classList.remove('completed');
+        });
+      }
+    });
+
+    // LocalStorage auto-save feature has been removed
+
+    // URL Query Parameters for shareable links
+    function loadFromURLParams() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.toString()) {
+        const title = params.get('title');
+        const desc = params.get('desc');
+        const url = params.get('url');
+        const siteName = params.get('site');
+        const image = params.get('image');
+        const type = params.get('type');
+
+        if (title) document.getElementById('title-input').value = title;
+        if (desc) document.getElementById('desc-input').value = desc;
+        if (url) document.getElementById('url-input').value = url;
+        if (siteName) document.getElementById('site-name-input').value = siteName;
+        if (image) document.getElementById('image-input').value = image;
+        if (type) document.getElementById('type-select').value = type;
+
+        // Trigger input events
+        ['title-input', 'desc-input', 'url-input', 'site-name-input', 'image-input', 'type-select'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el.value) {
+            el.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+        });
+
+        return true; // URL params were loaded
+      }
+      return false;
+    }
+
+    // Generate shareable URL
+    function generateShareableURL() {
+      const params = new URLSearchParams();
+      const title = document.getElementById('title-input').value;
+      const desc = document.getElementById('desc-input').value;
+      const url = document.getElementById('url-input').value;
+      const siteName = document.getElementById('site-name-input').value;
+      const image = document.getElementById('image-input').value;
+      const type = document.getElementById('type-select').value;
+
+      if (title) params.set('title', title);
+      if (desc) params.set('desc', desc);
+      if (url) params.set('url', url);
+      if (siteName) params.set('site', siteName);
+      if (image) params.set('image', image);
+      if (type && type !== 'website') params.set('type', type);
+
+      const baseURL = window.location.origin + window.location.pathname;
+      return params.toString() ? `${baseURL}?${params.toString()}` : baseURL;
+    }
+
+    // Load data from URL params if present
+    loadFromURLParams();
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      // Ctrl/Cmd + S - prevent default save dialog
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
+        // Prevent browser save dialog only
+      }
+
+      // Ctrl/Cmd + C to copy generated code (when not in input field)
+      if ((e.ctrlKey || e.metaKey) && e.key === 'c' && !['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
+        const tags = generator.generateTags();
+        if (tags && !tags.includes('Enter your content')) {
+          e.preventDefault();
+          copyToClipboard(tags).then(result => {
+            if (result.success) {
+              const notification = document.createElement('div');
+              notification.textContent = '✓ Code copied to clipboard!';
+              notification.style.cssText = `
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                background: hsl(var(--primary));
+                color: white;
+                padding: 0.75rem 1.5rem;
+                border-radius: var(--radius);
+                font-weight: 500;
+                z-index: 9999;
+                animation: fadeInUp 0.3s ease;
+              `;
+              document.body.appendChild(notification);
+              setTimeout(() => {
+                notification.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+              }, 2000);
+            }
+          });
+        }
+      }
+
+      // Ctrl/Cmd + K to focus title input
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        document.getElementById('title-input').focus();
+      }
+    });
+
+    // Add fade out animation for notifications
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    generator.onStateChange();
+
+    // Header navigation
+    document.getElementById('nav-guide').addEventListener('click', () => {
+      const guideSection = document.getElementById('seo-guide-section');
+      if (guideSection) {
+        const headerHeight = document.getElementById('main-header').offsetHeight;
+        const sectionTop = guideSection.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = sectionTop - headerHeight - 20;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+
+    // Validate button in validation section
+    document.getElementById('validate-tags-btn').addEventListener('click', () => {
+      const url = document.getElementById('url-input').value;
+      if (url) {
+        const encodedURL = encodeURIComponent(url);
+        const links = [
+          { name: 'Facebook Debugger', url: `https://developers.facebook.com/tools/debug/?q=${encodedURL}` },
+          { name: 'Twitter Card Validator', url: `https://cards-dev.twitter.com/validator` },
+          { name: 'LinkedIn Inspector', url: `https://www.linkedin.com/post-inspector/inspect/${encodedURL}` },
+          { name: 'Google Rich Results', url: `https://search.google.com/test/rich-results?url=${encodedURL}` }
+        ];
+
+        const message = links.map(link => `${link.name}: ${link.url}`).join('\n\n');
+        alert(`Opening validation tools in new tabs:\n\n${message}`);
+
+        links.forEach(link => window.open(link.url, '_blank'));
+      } else {
+        alert('Please enter a URL in the form above first to validate your meta tags.');
+      }
+    });
+
+    document.getElementById('nav-about').addEventListener('click', () => {
+      document.querySelector('.about-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Floating Action Button removed
+
+    // Hero CTA scroll to Content Details section
+    document.getElementById('scroll-to-form').addEventListener('click', () => {
+      const contentSection = document.getElementById('content-details-section');
+      if (contentSection) {
+        // Scroll with offset to account for fixed header
+        const headerHeight = document.getElementById('main-header').offsetHeight;
+        const sectionTop = contentSection.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = sectionTop - headerHeight - 20; // 20px extra padding
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        setTimeout(() => {
+          document.getElementById('title-input').focus();
+        }, 500);
+      }
+    });
+
+    // Template system has been removed
+
+    // Smart Placeholder Rotation
+    const placeholderExamples = {
+      title: [
+        'Best Coffee Beans 2025 | Premium Organic Coffee | BeanCo',
+        'Professional Web Design Services | Custom Websites | YourAgency',
+        'Handmade Leather Bags | Sustainable Fashion | LeatherCraft Co.',
+        'Free Project Management Tool | Team Collaboration Software',
+        '10 Tips for Better Photography | Complete Guide 2025',
+        'Yoga Classes Online | Live & On-Demand | FlowYoga Studio'
+      ],
+      description: [
+        'Discover premium organic coffee beans roasted to perfection. Free shipping on orders over $50. Shop 100+ varieties from around the world.',
+        'Transform your online presence with custom web design. Expert developers, stunning designs, proven results. Get a free consultation today.',
+        'Handcrafted leather bags made from sustainable materials. Each piece is unique and built to last a lifetime. Shop our collection now.',
+        'Streamline your team\'s workflow with our intuitive project management tool. Free forever for teams up to 10. Try it today!',
+        'Master photography with our comprehensive guide. Learn composition, lighting, editing and more. Perfect for beginners and pros alike.',
+        'Join thousands practicing yoga from home. Live classes daily, on-demand library, expert instructors. Start your 14-day free trial.'
+      ],
+      url: [
+        'https://example.com/premium-coffee-beans',
+        'https://youragency.com/services/web-design',
+        'https://leathercraft.co/collections/bags',
+        'https://projecttool.io/features',
+        'https://photoblog.com/guides/photography-tips',
+        'https://flowyoga.com/classes'
+      ],
+      siteName: [
+        'BeanCo',
+        'YourAgency',
+        'LeatherCraft Co.',
+        'ProjectTool',
+        'PhotoBlog',
+        'FlowYoga'
+      ],
+      image: [
+        'https://example.com/images/coffee-banner.jpg',
+        'https://youragency.com/og-image.png',
+        'https://leathercraft.co/featured-bag.jpg',
+        'https://projecttool.io/social-card.png',
+        'https://photoblog.com/guide-cover.jpg',
+        'https://flowyoga.com/class-preview.jpg'
+      ]
+    };
+
+    let currentExampleIndex = 0;
+    let rotationInterval;
+    let userHasTyped = false;
+
+    function rotateplaceholders() {
+      // Only rotate if user hasn't typed anything
+      const titleInput = document.getElementById('title-input');
+      const descInput = document.getElementById('desc-input');
+      const urlInput = document.getElementById('url-input');
+      const siteNameInput = document.getElementById('site-name-input');
+      const imageInput = document.getElementById('image-input');
+
+      if (titleInput.value || descInput.value || urlInput.value ||
+          siteNameInput.value || imageInput.value) {
+        return; // User has content, stop rotating
+      }
+
+      currentExampleIndex = (currentExampleIndex + 1) % placeholderExamples.title.length;
+
+      // Fade out animation
+      titleInput.style.opacity = '0.5';
+      descInput.style.opacity = '0.5';
+      urlInput.style.opacity = '0.5';
+      siteNameInput.style.opacity = '0.5';
+      imageInput.style.opacity = '0.5';
+
+      setTimeout(() => {
+        titleInput.placeholder = placeholderExamples.title[currentExampleIndex];
+        descInput.placeholder = placeholderExamples.description[currentExampleIndex];
+        urlInput.placeholder = placeholderExamples.url[currentExampleIndex];
+        siteNameInput.placeholder = placeholderExamples.siteName[currentExampleIndex];
+        imageInput.placeholder = placeholderExamples.image[currentExampleIndex];
+
+        // Fade in animation
+        titleInput.style.opacity = '1';
+        descInput.style.opacity = '1';
+        urlInput.style.opacity = '1';
+        siteNameInput.style.opacity = '1';
+        imageInput.style.opacity = '1';
+      }, 200);
+    }
+
+    // Add transition for smooth placeholder changes
+    const inputStyle = document.createElement('style');
+    inputStyle.textContent = `
+      #title-input, #desc-input, #url-input, #site-name-input, #image-input {
+        transition: opacity 0.3s ease;
+      }
+    `;
+    document.head.appendChild(inputStyle);
+
+    // Start rotation after 5 seconds, then every 8 seconds
+    setTimeout(() => {
+      rotateplaceholders();
+      rotationInterval = setInterval(rotateplaceholders, 8000);
+    }, 5000);
+
+    // Stop rotation when user starts typing
+    ['title-input', 'desc-input', 'url-input', 'site-name-input', 'image-input'].forEach(id => {
+      const input = document.getElementById(id);
+      input.addEventListener('input', () => {
+        if (!userHasTyped && input.value) {
+          userHasTyped = true;
+          clearInterval(rotationInterval);
+        }
+      });
+
+      // Reset rotation if all fields are cleared
+      input.addEventListener('input', () => {
+        const allEmpty = ['title-input', 'desc-input', 'url-input', 'site-name-input', 'image-input']
+          .every(fieldId => !document.getElementById(fieldId).value);
+
+        if (allEmpty && userHasTyped) {
+          userHasTyped = false;
+          setTimeout(() => {
+            rotateplaceholders();
+            rotationInterval = setInterval(rotateplaceholders, 8000);
+          }, 5000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
